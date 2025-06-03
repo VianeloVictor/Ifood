@@ -11,7 +11,7 @@ public abstract class PedidoEstado {
         return false;
     }
 
-    public boolean Caminho(Pedido pedido) {
+    public boolean caminho(Pedido pedido) {
         return false;
     }
 

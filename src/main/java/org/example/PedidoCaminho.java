@@ -11,7 +11,7 @@ public class PedidoCaminho extends PedidoEstado {
         return instance;
     }
 
-    @Override
+
     public String getDescription() {
         return "Pedido a caminho";
     }

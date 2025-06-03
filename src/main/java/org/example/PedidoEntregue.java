@@ -11,7 +11,7 @@ public class PedidoEntregue extends PedidoEstado {
         return instance;
     }
 
-    @Override
+
     public String getDescription() {
         return "Pedido entregue";
     }

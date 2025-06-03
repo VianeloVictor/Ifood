@@ -13,6 +13,26 @@ public class Pedido extends Observable {
         this.estado = PedidoConfirmado.getInstance();
     }
 
+    public boolean confirmado() {
+        return this.estado.confirmado(this);
+    }
+
+    public boolean preparando() {
+        return this.estado.preparando(this);
+    }
+
+    public boolean caminho() {
+        return this.estado.caminho(this);
+    }
+
+    public boolean entregue() {
+        return this.estado.entregue(this);
+    }
+
+    public boolean cancelado() {
+        return this.estado.cancelado(this);
+    }
+
     public void setEstado(PedidoEstado estado) {
         this.estado = estado;
         this.setChanged();
