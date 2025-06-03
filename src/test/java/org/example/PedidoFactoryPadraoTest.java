@@ -32,4 +32,30 @@ class PedidoFactoryPadraoTest {
 
         assertEquals(expectedMessage, usuario.getLastNotification());
     }
+    @Test
+    public void NotificarPreparoExpressoPreparando() {
+        this.usuario.fazerPedido(this.pedidoExpress);
+        this.pedidoExpress.preparando();
+
+        var expectedMessage = this.buildExpectedMessage("Pedido em preparação", "EXPRESS");
+
+        assertEquals(expectedMessage, usuario.getLastNotification());
+    }
+
+    @Test
+    public void NotificarExpressoCancelado() {
+        this.usuario.fazerPedido(this.pedidoExpress);
+        this.pedidoExpress.preparando();
+
+        var expectedMessage = this.buildExpectedMessage("Pedido em preparação", "EXPRESS");
+
+        assertEquals(expectedMessage, usuario.getLastNotification());
+
+        this.pedidoExpress.cancelado();
+
+        expectedMessage = this.buildExpectedMessage("Pedido cancelado", "EXPRESS");
+
+        assertEquals(expectedMessage, usuario.getLastNotification());
+    }
 }
+
