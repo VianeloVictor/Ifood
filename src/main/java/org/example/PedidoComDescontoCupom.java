@@ -12,6 +12,6 @@ public class PedidoComDescontoCupom extends PedidoDecoratorBase {
 
     @Override
     public double getPreco() {
-        return pedido.getPreco() - 5.0; // valor fixo de desconto
+        return pedido.getPreco() - 5.0;
     }
 }

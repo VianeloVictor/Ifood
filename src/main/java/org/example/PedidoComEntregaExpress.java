@@ -12,6 +12,6 @@ public class PedidoComEntregaExpress extends PedidoDecoratorBase {
 
     @Override
     public double getPreco() {
-        return pedido.getPreco() + 7.5; // taxa de entrega expressa
+        return pedido.getPreco() + 7.5;
     }
 }
