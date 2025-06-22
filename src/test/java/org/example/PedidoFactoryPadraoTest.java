@@ -57,5 +57,16 @@ class PedidoFactoryPadraoTest {
 
         assertEquals(expectedMessage, usuario.getLastNotification());
     }
-}
+    @Test
+    public void TestarDecorator() {
+        Pedido pedidoOriginal = new Pedido("123", "Restaurante do Zé");
 
+        PedidoComponente pedidoBase = new PedidoAdaptador(pedidoOriginal);
+
+        PedidoComponente pedidoDecorado = new PedidoComEntregaExpress(
+                new PedidoComDescontoCupom(pedidoBase));
+
+        System.out.println(pedidoDecorado.getDescricao());
+        System.out.println("Valor final: R$" + pedidoDecorado.getPreco());
+    }
+}
